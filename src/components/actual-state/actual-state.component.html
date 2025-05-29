@@ -1,4 +1,4 @@
-<div class="lg:col-span-2 rounded-xl bg-white p-4 shadow-sm">
+<div class="rounded-xl bg-white p-4 shadow-sm">
   <div class="flex flex-row items-center justify-between mb-6">
     <div>
       <div class="flex items-center gap-2 text-3xl font-semibold">
@@ -57,10 +57,10 @@
   </div>
 
   <!-- Alert -->
-  <div class="mt-6 border-1 border-l-4 p-4 rounded bg-white" [ngClass]="uvLevel.color.replace('bg-', 'border-')">
+  <div class="mt-6 border-1 border-l-4 p-4 rounded" [ngClass]="uvLevel.borderColor">
     <div class="flex items-start gap-2">
       <lucide-angular [img]="ShieldIcon" class="h-4 w-4 mt-0.5"></lucide-angular>
-      <div class="font-medium">{{ recommendations.safety }}</div>
+      <div class="font-semibold">{{ recommendations.safety }}</div>
     </div>
   </div>
 </div>

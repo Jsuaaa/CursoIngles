@@ -1,9 +1,9 @@
-<div class="w-full h-screen bg-principal">
+<div class="w-full h-screen bg-principal flex flex-col items-center">
   <app-header [title]="'Monitor de Radiación Solar'"></app-header>
 
   <!-- Main Dashboard -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-    <app-actual-state></app-actual-state>
+  <div class="w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <app-actual-state class="lg:col-span-2"></app-actual-state>
   </div>
 
 </div>
