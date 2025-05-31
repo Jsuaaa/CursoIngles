@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiService {
 
   private sensorDataSubject = new BehaviorSubject<SolarData>({
-    uvIndex: 2,
+    uvIndex: 7,
     temperature: 32,
     timestamp: new Date(),
     location: 'Montería'

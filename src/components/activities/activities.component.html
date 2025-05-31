@@ -1,1 +1,16 @@
-<p>activities works!</p>
+<div class="w-full lg:h-full md:p-6 p-4 flex flex-col justify-between bg-white shadow-sm rounded-xl">
+  <div class="w-full flex items-center">
+    <lucide-angular [img]="ActivityIcon" [color]="'#22c55e'" class="w-5 h-5 mr-2"></lucide-angular>
+    <h1 class="font-bold md:text-xl">Actividades Recomendadas</h1>
+  </div>
+
+  <div class="w-full p-4 grid grid-cols-2 gap-2">
+    @for (activity of recommendations.activities; track $index) {
+      <div class="flex justify-center items-center">
+        <div class="bg-gray-100 w-full rounded-full p-2">
+          <p class="text-xs font-bold text-center md:text-base">{{ activity }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

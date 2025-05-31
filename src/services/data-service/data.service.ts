@@ -10,11 +10,11 @@ export class DataService {
   constructor() { }
 
   getUVLevel(uvIndex: number): UvLevel {
-    if (uvIndex <= 2) return { level: "Bajo", color: "bg-green-500", textColor: "text-green-700", borderColor:"border-green-500"};
+    if (uvIndex <= 2) return { level: "Bajo", color: "bg-green-700", textColor: "text-green-700", borderColor:"border-green-500"};
     if (uvIndex <= 5) return { level: "Moderado", color: "bg-yellow-500", textColor: "text-yellow-500", borderColor:"border-yellow-500" };
-    if (uvIndex <= 7) return { level: "Alto", color: "bg-orange-500", textColor: "text-orange-700", borderColor:"border-orange-500" };
-    if (uvIndex <= 10) return { level: "Muy Alto", color: "bg-red-500", textColor: "text-red-700", borderColor:"border-red-500" };
-    return { level: "Extremo", color: "bg-purple-500", textColor: "text-purple-700", borderColor:"border-purple-500" };
+    if (uvIndex <= 7) return { level: "Alto", color: "bg-orange-700", textColor: "text-orange-700", borderColor:"border-orange-500" };
+    if (uvIndex <= 10) return { level: "Muy Alto", color: "bg-red-700", textColor: "text-red-700", borderColor:"border-red-500" };
+    return { level: "Extremo", color: "bg-purple-700", textColor: "text-purple-700", borderColor:"border-purple-500" };
   }
 
   getRecommendations(uvIndex: number): Recommendation {
