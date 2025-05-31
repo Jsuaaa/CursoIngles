@@ -1,5 +1,5 @@
-<div class="w-full bg-principal flex flex-col items-center">
-  <app-header [title]="'Monitor de Radiación Solar'"></app-header>
+<div class="w-full bg-principal flex flex-col items-center py-6">
+  <app-header [title]="'Solar Radiation Monitor'"></app-header>
 
   <!-- Main Dashboard -->
   <div class="w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -10,5 +10,9 @@
   <div class="w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
     <app-protection [recommendations]="recommendations" [solarData]="solarData" class="lg:col-span-2"></app-protection>
     <app-activities [recommendations]="recommendations" class="lg:col-span-2"></app-activities>
+  </div>
+
+  <div class="w-11/12 lg:w-10/12 grid grid-cols-1 gap-6 mt-6">
+    <app-info-square></app-info-square>
   </div>
 </div>

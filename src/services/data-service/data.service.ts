@@ -10,43 +10,76 @@ export class DataService {
   constructor() { }
 
   getUVLevel(uvIndex: number): UvLevel {
-    if (uvIndex <= 2) return { level: "Bajo", color: "bg-green-700", textColor: "text-green-700", borderColor:"border-green-500"};
-    if (uvIndex <= 5) return { level: "Moderado", color: "bg-yellow-500", textColor: "text-yellow-500", borderColor:"border-yellow-500" };
-    if (uvIndex <= 7) return { level: "Alto", color: "bg-orange-700", textColor: "text-orange-700", borderColor:"border-orange-500" };
-    if (uvIndex <= 10) return { level: "Muy Alto", color: "bg-red-700", textColor: "text-red-700", borderColor:"border-red-500" };
-    return { level: "Extremo", color: "bg-purple-700", textColor: "text-purple-700", borderColor:"border-purple-500" };
+    if (uvIndex <= 2) {
+      return {
+        level: "Low",
+        color: "bg-green-700",
+        textColor: "text-green-700",
+        borderColor: "border-green-500"
+      };
+    }
+    if (uvIndex <= 5) {
+      return {
+        level: "Moderate",
+        color: "bg-yellow-500",
+        textColor: "text-yellow-500",
+        borderColor: "border-yellow-500"
+      };
+    }
+    if (uvIndex <= 7) {
+      return {
+        level: "High",
+        color: "bg-orange-700",
+        textColor: "text-orange-700",
+        borderColor: "border-orange-500"
+      };
+    }
+    if (uvIndex <= 10) {
+      return {
+        level: "Very High",
+        color: "bg-red-700",
+        textColor: "text-red-700",
+        borderColor: "border-red-500"
+      };
+    }
+    return {
+      level: "Extreme",
+      color: "bg-purple-700",
+      textColor: "text-purple-700",
+      borderColor: "border-purple-500"
+    };
   }
 
   getRecommendations(uvIndex: number): Recommendation {
     if (uvIndex <= 2) {
       return {
-        safety: "Es seguro estar al aire libre sin protección especial",
-        protection: ["Gafas de sol opcionales", "Protector solar si tienes piel sensible"],
-        activities: ["Caminatas largas", "Deportes al aire libre", "Picnic en el parque", "Jardinería", "Ciclismo", "Correr"]
+        safety: "It is safe to be outdoors without special protection",
+        protection: ["Optional sunglasses", "Sunscreen if you have sensitive skin"],
+        activities: ["Long walks", "Outdoor sports", "Picnic in the park", "Gardening", "Cycling", "Running"]
       };
     } else if (uvIndex <= 5) {
       return {
-        safety: "Protección recomendada durante las horas pico",
-        protection: ["Protector solar SPF 30+", "Gafas de sol", "Sombrero"],
-        activities: ["Deportes matutinos", "Caminatas cortas", "Actividades en la sombra", "Natación", "Tenis temprano", "Golf matutino"]
+        safety: "Protection recommended during peak hours",
+        protection: ["SPF 30+ sunscreen", "Sunglasses", "Hat"],
+        activities: ["Morning sports", "Short walks", "Shaded activities", "Swimming", "Early tennis", "Morning golf"]
       };
     } else if (uvIndex <= 7) {
       return {
-        safety: "Protección necesaria, evitar exposición prolongada",
-        protection: ["Protector solar SPF 50+", "Ropa de manga larga", "Sombrero de ala ancha", "Gafas de sol UV400"],
-        activities: ["Actividades bajo techo", "Natación cubierta", "Gimnasio", "Museos", "Centros comerciales", "Lectura en casa"]
+        safety: "Protection necessary, avoid prolonged exposure",
+        protection: ["SPF 50+ sunscreen", "Long-sleeved clothing", "Wide-brim hat", "UV400 sunglasses"],
+        activities: ["Indoor activities", "Indoor swimming", "Gym", "Museums", "Shopping malls", "Reading at home"]
       };
     } else if (uvIndex <= 10) {
       return {
-        safety: "Evitar salir entre 10 AM y 4 PM",
-        protection: ["Protector solar SPF 50+ cada 2 horas", "Ropa protectora", "Sombrero y gafas", "Buscar sombra constantemente"],
-        activities: ["Actividades de interior", "Cine", "Bibliotecas", "Cocinar", "Videojuegos", "Trabajo desde casa"]
+        safety: "Avoid going out between 10 AM and 4 PM",
+        protection: ["SPF 50+ sunscreen every 2 hours", "Protective clothing", "Hat and sunglasses", "Seek shade constantly"],
+        activities: ["Indoor activities", "Cinema", "Libraries", "Cooking", "Video games", "Work from home"]
       };
     } else {
       return {
-        safety: "¡PELIGRO! Evitar toda exposición solar",
-        protection: ["NO salir al sol", "Permanecer en interiores", "Si es necesario salir: protección máxima", "Protector solar SPF 50+ cada hora"],
-        activities: ["Quedarse en casa", "Actividades de interior únicamente", "Leer", "Ver películas", "Cocinar", "Descansar"]
+        safety: "DANGER! Avoid all sun exposure",
+        protection: ["Do NOT go out in the sun", "Stay indoors", "If necessary to go out: maximum protection", "SPF 50+ sunscreen every hour"],
+        activities: ["Stay at home", "Indoor-only activities", "Reading", "Watching movies", "Cooking", "Resting"]
       };
     }
   }

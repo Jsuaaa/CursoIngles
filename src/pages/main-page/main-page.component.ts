@@ -11,10 +11,11 @@ import { Recommendation } from '../../models/recommendation';
 import { UvLevel } from '../../models/uv-level';
 import { ProtectionComponent } from '../../components/protection/protection.component';
 import { ActivitiesComponent } from '../../components/activities/activities.component';
+import { InfoSquareComponent } from '../../components/info-square/info-square.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [HeaderComponent, ActualStateComponent, FastInfoComponent, ProtectionComponent, ActivitiesComponent],
+  imports: [HeaderComponent, ActualStateComponent, FastInfoComponent, ProtectionComponent, ActivitiesComponent, InfoSquareComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })

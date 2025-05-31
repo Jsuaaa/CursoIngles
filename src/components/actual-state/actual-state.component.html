@@ -3,11 +3,11 @@
     <div>
       <div class="flex items-center gap-2 text-3xl font-semibold">
         <lucide-angular [img]="getWeatherIcon().icon" class="w-16 h-16" [class]="getWeatherIcon().color"></lucide-angular>
-        Estado <br> Actual
+        Current <br> State
       </div>
       <div class="flex items-center gap-1 text-sm text-gray-500">
         <lucide-angular [img]="ClockIcon" class="h-4 w-4"></lucide-angular>
-        Última actualización: {{ solarData.timestamp.toLocaleTimeString() }}
+        Last updated: {{ solarData.timestamp.toLocaleTimeString() }}
       </div>
     </div>
 
@@ -17,11 +17,11 @@
       class="flex items-center text-sm border px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
     > -->
 
-    <button class="flex items-center text-sm border border-gray-300 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-zinc-800">
+    <button class="flex items-center text-sm border border-gray-300 px-2 py-1 rounded hover:bg-gray-100">
 
       <!-- <lucide-angular [img]="RefreshCwIcon" class="h-4 w-4 mr-2" [ngClass]="{ 'animate-spin': isLoading }"></lucide-angular> -->
       <lucide-angular [img]="RefreshCwIcon" class="h-4 w-4 mr-2"></lucide-angular>
-      Actualizar
+      Refresh
     </button>
   </div>
 
@@ -30,7 +30,7 @@
     <div class="space-y-2">
       <div class="flex items-center gap-2">
         <lucide-angular [img]="EyeIcon" class="h-5 w-5 text-orange-500"></lucide-angular>
-        <span class="font-medium">Índice UV</span>
+        <span class="font-medium">UV Index</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-3xl font-bold">{{ solarData.uvIndex.toFixed(1) }}</span>
@@ -48,7 +48,7 @@
     <div class="space-y-2">
       <div class="flex items-center gap-2">
         <lucide-angular [img]="ThermometerIcon" class="h-5 w-5 text-red-500"></lucide-angular>
-        <span class="font-medium">Temperatura</span>
+        <span class="font-medium">Temperature</span>
       </div>
       <div class="flex items-center gap-3">
         <span class="text-3xl font-bold">{{ solarData.temperature.toFixed(1) }}°C</span>
