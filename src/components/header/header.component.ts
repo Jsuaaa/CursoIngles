@@ -1,12 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-app-header',
+  selector: 'app-header',
   imports: [],
-  templateUrl: './app-header.component.html',
-  styleUrl: './app-header.component.css'
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css'
 })
-export class AppHeaderComponent implements OnChanges{
+export class HeaderComponent implements OnChanges{
 
   @Input({required:true}) title:string = '';
 
@@ -15,6 +15,5 @@ export class AppHeaderComponent implements OnChanges{
       this.title = changes['title'].currentValue;
     }
   }
-
 
 }

@@ -4,5 +4,9 @@
 @theme {
 
   --color-principal: #f5f6f8;
+  --color-protection-main: #3b82f6;
+  --color-activities-main: #22c55e;
 
 }
+
+/* Color para las letras secundarias gray-500; */

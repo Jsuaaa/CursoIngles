@@ -1,1 +1,14 @@
-<p>main-page works!</p>
+<div class="w-full bg-principal flex flex-col items-center">
+  <app-header [title]="'Monitor de Radiación Solar'"></app-header>
+
+  <!-- Main Dashboard -->
+  <div class="w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <app-actual-state [solarData]="solarData" [recommendations]="recommendations" [uvLevel]="uvLevel" class="lg:col-span-2"></app-actual-state>
+    <app-fast-info [solarData]="solarData" [uvLevel]="uvLevel" class="lg:col-span-1"></app-fast-info>
+  </div>
+
+  <div class="w-11/12 lg:w-10/12 grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
+    <app-protection [recommendations]="recommendations" [solarData]="solarData" class="lg:col-span-2"></app-protection>
+    <app-activities [recommendations]="recommendations" class="lg:col-span-2"></app-activities>
+  </div>
+</div>
