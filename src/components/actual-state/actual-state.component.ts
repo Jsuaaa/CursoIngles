@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { LucideAngularModule, SunIcon, CloudSunIcon, CloudIcon, RefreshCwIcon, ClockIcon, EyeIcon, ThermometerIcon, ShieldIcon } from 'lucide-angular';
 import { DataService } from '../../services/data-service/data.service';
 import { ApiService } from '../../services/api-service/api.service';

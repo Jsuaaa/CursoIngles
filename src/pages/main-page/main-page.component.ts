@@ -9,10 +9,11 @@ import { DataService } from '../../services/data-service/data.service';
 import { SolarData } from '../../models/solar-data';
 import { Recommendation } from '../../models/recommendation';
 import { UvLevel } from '../../models/uv-level';
+import { ProtectionComponent } from '../../components/protection/protection.component';
 
 @Component({
   selector: 'app-main-page',
-  imports: [HeaderComponent, ActualStateComponent, FastInfoComponent],
+  imports: [HeaderComponent, ActualStateComponent, FastInfoComponent, ProtectionComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
