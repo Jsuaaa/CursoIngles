@@ -1,11 +1,11 @@
-<div class="rounded-xl bg-white p-4 shadow-sm">
+<div class="rounded-xl bg-white p-4 lg:p-6 shadow-sm">
   <div class="flex flex-row items-center justify-between mb-6">
     <div>
       <div class="flex items-center gap-2 text-3xl font-semibold">
         <lucide-angular [img]="getWeatherIcon().icon" class="w-16 h-16" [class]="getWeatherIcon().color"></lucide-angular>
         Estado <br> Actual
       </div>
-      <div class="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
+      <div class="flex items-center gap-1 text-sm text-gray-500">
         <lucide-angular [img]="ClockIcon" class="h-4 w-4"></lucide-angular>
         Última actualización: {{ solarData.timestamp.toLocaleTimeString() }}
       </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LucideAngularModule, SunIcon, CloudSunIcon, CloudIcon, RefreshCwIcon, ClockIcon, EyeIcon, ThermometerIcon, ShieldIcon } from 'lucide-angular';
 import { DataService } from '../../services/data-service/data.service';
 import { ApiService } from '../../services/api-service/api.service';
@@ -13,16 +13,14 @@ import { NgClass } from '@angular/common';
   templateUrl: './actual-state.component.html',
   styleUrl: './actual-state.component.css'
 })
-export class ActualStateComponent implements OnInit{
+export class ActualStateComponent implements OnChanges{
 
   // Datos del sensor
-  solarData!: SolarData;
+  @Input({required: true}) solarData!:SolarData;
 
   // Datos del servicio de datos
-  recommendations!: Recommendation;
-  uvLevel!:UvLevel;
-
-
+  @Input({required: true}) recommendations!:Recommendation;
+  @Input({required: true}) uvLevel!:UvLevel;
 
   // Icons
   readonly SunIcon = SunIcon;
@@ -36,12 +34,18 @@ export class ActualStateComponent implements OnInit{
 
   constructor(private dataService:DataService, private apiService: ApiService){}
 
-  ngOnInit(): void {
-    this.apiService.sensorData$.subscribe((data) => {
-      this.solarData = data;
-      this.recommendations = this.dataService.getRecommendations(this.solarData.uvIndex);
-      this.uvLevel = this.dataService.getUVLevel(this.solarData.uvIndex);
-    });
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['solarData']){
+      this.solarData = changes['solarData'].currentValue;
+    }
+
+    if(changes['recommendations']){
+      this.recommendations = changes['recommendations'].currentValue;
+    }
+
+    if(changes['uvLevel']){
+      this.uvLevel = changes['uvLevel'].currentValue;
+    }
   }
 
   getWeatherIcon(): {icon:any, color:string} {

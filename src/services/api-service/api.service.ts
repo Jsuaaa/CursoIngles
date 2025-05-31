@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ApiService {
 
   private sensorDataSubject = new BehaviorSubject<SolarData>({
-    uvIndex: 12,
+    uvIndex: 2,
     temperature: 32,
     timestamp: new Date(),
     location: 'Montería'
@@ -16,7 +16,9 @@ export class ApiService {
 
   sensorData$ = this.sensorDataSubject.asObservable();
 
-  constructor() { }
+  constructor() {
+    this.simulateSensorData();
+  }
 
   updateSensorData(newData: Partial<SolarData>): void {
     const currentData = this.sensorDataSubject.value;
@@ -26,5 +28,21 @@ export class ApiService {
       timestamp: new Date() // actualiza la fecha cada vez
     };
     this.sensorDataSubject.next(updatedData);
+  }
+
+  private simulateSensorData(): void {
+    setInterval(() => {
+      const randomUvIndex = this.randomNumber(0, 11); // valores UV típicos
+      const randomTemperature = this.randomNumber(25, 40); // valores de temperatura simulados
+
+      this.updateSensorData({
+        uvIndex: randomUvIndex,
+        temperature: randomTemperature
+      });
+    }, 30000); // cada 30 segundos
+  }
+
+  private randomNumber(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
