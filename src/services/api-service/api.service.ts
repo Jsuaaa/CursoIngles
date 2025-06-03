@@ -17,7 +17,7 @@ export class ApiService {
 
   sensorData$ = this.sensorDataSubject.asObservable();
 
-  private apiUrl = 'http://localhost:8080/api/sensor/latest'; // tu backend real
+  private apiUrl = 'https://cursoinglesback-production.up.railway.app/api/sensor/latest'; // tu backend real
 
   constructor(private http: HttpClient) {
     this.fetchSensorDataPeriodically();
