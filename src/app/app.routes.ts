@@ -5,6 +5,7 @@ import { Page404Component } from '../pages/page-404/page-404.component';
 export const routes: Routes = [
 
 {path: '', component: MainPageComponent},
-{path: '**', component: Page404Component}
+{path: '404', component: Page404Component},
+{path: '**', redirectTo:'404'}
 
 ];
