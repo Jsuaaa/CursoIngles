@@ -1,6 +1,6 @@
 export interface SolarData {
   uvIndex: number
   temperature: number
-  timestamp: Date
+  timestamp: string
   location: string
 }

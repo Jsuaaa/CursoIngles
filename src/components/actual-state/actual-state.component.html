@@ -7,22 +7,9 @@
       </div>
       <div class="flex items-center gap-1 text-sm text-gray-500">
         <lucide-angular [img]="ClockIcon" class="h-4 w-4"></lucide-angular>
-        Last updated: {{ solarData.timestamp.toLocaleTimeString() }}
+        Last updated: {{ solarData.timestamp }}
       </div>
     </div>
-
-    <!-- <button
-      (click)="simulateSensorData()"
-      [disabled]="isLoading"
-      class="flex items-center text-sm border px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
-    > -->
-
-    <button class="flex items-center text-sm border border-gray-300 px-2 py-1 rounded hover:bg-gray-100">
-
-      <!-- <lucide-angular [img]="RefreshCwIcon" class="h-4 w-4 mr-2" [ngClass]="{ 'animate-spin': isLoading }"></lucide-angular> -->
-      <lucide-angular [img]="RefreshCwIcon" class="h-4 w-4 mr-2"></lucide-angular>
-      Refresh
-    </button>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
